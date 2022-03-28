@@ -15,7 +15,7 @@ variables
   at_light = TRUE,
   light = "red";
 
-fair+ process light = "light"
+fair+ process stree_light = "light"
 begin
   Cycle:
     while at_light do
@@ -81,5 +81,5 @@ Termination == <>(\A self \in ProcSet: pc[self] = "Done")
 
 =============================================================================
 \* Modification History
-\* Last modified Sun Mar 28 19:25:31 CEST 2021 by aricci
+\* Last modified Mon Mar 28 11:58:17 CEST 2022 by aricci
 \* Created Sun Mar 28 12:25:02 CEST 2021 by aricci

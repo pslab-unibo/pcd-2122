@@ -15,7 +15,7 @@ variables
   at_light = TRUE,
   light = "red";
 
-fair process light = "light"
+fair process street_light = "light"
 begin
   Cycle:
     while at_light do
@@ -31,8 +31,7 @@ begin
 end process;
 end algorithm;*)
 
-\* BEGIN TRANSLATION (chksum(pcal) = "ab488d60" /\ chksum(tla) = "f420fa00")
-\* Process light at line 18 col 6 changed to light_
+\* BEGIN TRANSLATION (chksum(pcal) = "18beb5eb" /\ chksum(tla) = "dcb4f4ed")
 VARIABLES at_light, light, pc
 
 vars == << at_light, light, pc >>
@@ -53,7 +52,7 @@ Cycle == /\ pc["light"] = "Cycle"
                     /\ light' = light
          /\ UNCHANGED at_light
 
-light_ == Cycle
+street_light == Cycle
 
 Drive == /\ pc["car"] = "Drive"
          /\ light = "green"
@@ -67,11 +66,11 @@ car == Drive
 Terminating == /\ \A self \in ProcSet: pc[self] = "Done"
                /\ UNCHANGED vars
 
-Next == light_ \/ car
+Next == street_light \/ car
            \/ Terminating
 
 Spec == /\ Init /\ [][Next]_vars
-        /\ WF_vars(light_)
+        /\ WF_vars(street_light)
         /\ WF_vars(car)
 
 Termination == <>(\A self \in ProcSet: pc[self] = "Done")
@@ -81,5 +80,5 @@ Termination == <>(\A self \in ProcSet: pc[self] = "Done")
 
 =============================================================================
 \* Modification History
-\* Last modified Sun Mar 28 19:23:03 CEST 2021 by aricci
+\* Last modified Mon Mar 28 11:55:57 CEST 2022 by aricci
 \* Created Sun Mar 28 12:25:02 CEST 2021 by aricci
