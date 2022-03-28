@@ -1,0 +1,5 @@
+target = pcd.lab05.jpf.TestScenarios
+
+classpath=bin/main
+
+report.console.property_violation=error,trace
