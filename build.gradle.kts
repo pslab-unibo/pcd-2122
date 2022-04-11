@@ -21,8 +21,9 @@ dependencies {
     // Use JUnit test framework
     testImplementation("junit:junit:4.13.2")
     implementation(files("JPF/jpf-core/build/jpf-classes.jar"))
+    implementation("io.vertx:vertx-core:4.2.6")
 }
-
+/*
 tasks.register("jpfVerify") {
     group = "Verification"
     description = "Run JPF verification with ./gradlew jpfVerify /path/of/your/jpf"
@@ -67,3 +68,4 @@ tasks.register("jpfVerify") {
         exec { commandLine("docker", "exec", "jpf_run_${project.name}", "java", "-jar", "/usr/lib/JPF/jpf-core/build/RunJPF.jar", properties["file"])}
     }
 }
+*/

@@ -1,0 +1,22 @@
+plugins {
+    // Apply the java-library plugin to add support for Java Library
+    id 'java-library'
+}
+
+repositories {
+    jcenter()
+}
+
+
+dependencies {
+
+    /* module 2.2 - async programming with event-loops - vert.x */
+    implementation 'io.vertx:vertx-core:4.2.6'
+    implementation 'io.vertx:vertx-web:4.2.6'
+    implementation 'io.vertx:vertx-web-client:4.2.6'
+
+	implementation 'com.github.javaparser:javaparser-symbol-solver-core:3.24.2'
+
+    // Use JUnit test framework
+    testImplementation 'junit:junit:4.13.2'
+}
