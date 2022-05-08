@@ -7,6 +7,9 @@ repositories {
     jcenter()
 }
 
+def versions = [
+  ScalaBinary: "2.13"
+]
 
 dependencies {
 
@@ -16,10 +19,23 @@ dependencies {
     implementation 'io.vertx:vertx-web:4.2.6'
     implementation 'io.vertx:vertx-web-client:4.2.6'
 
+	/* module 2.3 - reactive programming - RxJava */
 	implementation 'io.reactivex.rxjava3:rxjava:3.1.4'
 
+	/* for assignment #02 */
 	implementation 'com.github.javaparser:javaparser-symbol-solver-core:3.24.2'
+
+	/* module 3.1 - akka actors */
+    implementation platform("com.typesafe.akka:akka-bom_${versions.ScalaBinary}:2.6.19")
+    implementation "com.typesafe.akka:akka-actor-typed_${versions.ScalaBinary}"
 
     // Use JUnit test framework
     testImplementation 'junit:junit:4.13.2'
+
+	/* for logging */
+	implementation 'org.slf4j:slf4j-api:1.7.25'
+	implementation 'org.slf4j:slf4j-jdk14:1.7.36'
+	
+	
+
 }
