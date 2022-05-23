@@ -29,6 +29,9 @@ dependencies {
     implementation platform("com.typesafe.akka:akka-bom_${versions.ScalaBinary}:2.6.19")
     implementation "com.typesafe.akka:akka-actor-typed_${versions.ScalaBinary}"
 
+	/* module 4.2 */
+	implementation 'com.rabbitmq:amqp-client:5.14.2'
+	
     // Use JUnit test framework
     testImplementation 'junit:junit:4.13.2'
 
