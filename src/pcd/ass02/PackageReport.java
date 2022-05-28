@@ -4,12 +4,9 @@ import java.util.List;
 
 public interface PackageReport {
 
-	String getFullClassName();
+	String getPackageName();
 	
-	String getSrcFullFileName();
-
-	List<MethodInfo> getMethodsInfo();
-
-	List<FieldInfo> getFieldsInfo();
+	List<ClassReport> getClassesInfo();
 	
+	List<InterfaceReport> getInterfacesInfo();
 }

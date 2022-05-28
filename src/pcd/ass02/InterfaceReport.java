@@ -2,14 +2,12 @@ package pcd.ass02;
 
 import java.util.List;
 
-public interface ClassReport {
+public interface InterfaceReport  {
 
-	String getFullClassName();
+	String getInterfaceFullName();
 	
 	String getSrcFullFileName();
 	
 	List<MethodInfo> getMethodsInfo();
 
-	List<FieldInfo> getFieldsInfo();
-	
 }

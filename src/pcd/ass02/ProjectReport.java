@@ -4,9 +4,8 @@ import java.util.List;
 
 public interface ProjectReport {
 
-	ClassReport getMainClass();
+	String getMainClass();
 	
-	List<ClassReport> getAllClasses();
+	List<PackageReport> getPackages();
 	
-	ClassReport getClassReport(String fullClassName);
 }
