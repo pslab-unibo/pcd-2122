@@ -1,4 +1,4 @@
-package pcd.ass01.concur;
+package pcd.ass02.ex1;
 
 public class ConcurrentBodySimulationMain {
 

@@ -1,6 +1,5 @@
 package pcd.ass01.concur;
 
-import java.util.*;
 import java.util.concurrent.CyclicBarrier;
 
 public class UpdateBodyWorkerAgent extends BaseAgent {
