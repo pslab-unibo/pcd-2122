@@ -61,37 +61,37 @@ public class Statistics {
 		numFields = 0;
 	}
 
-	public synchronized void notifyNewClass(String name) {
+	public  void notifyNewClass(String name) {
 		if (clMap.get(name) == null) {
 			clMap.put(name, name);
 		}
 	}
 
-	public synchronized void notifyNewInterface(String name) {
+	public  void notifyNewInterface(String name) {
 		if (intMap.get(name) == null) {
 			intMap.put(name, name);
 		}
 	}
 
-	public synchronized void notifyNewPackage(String name) {
+	public  void notifyNewPackage(String name) {
 		if (packMap.get(name) == null) {
 			packMap.put(name, name);
 		}
 	}
 
-	public synchronized void notifyNewMethod() {
+	public  void notifyNewMethod() {
 		numMethods++;
 	}
 
-	public synchronized void notifyNewField() {
+	public  void notifyNewField() {
 		numFields++;
 	}
 
-	public  synchronized StatSnapshot getSnapshot() {
+	public StatSnapshot getSnapshot() {
 		return new StatSnapshot(packMap.size(), clMap.size(), intMap.size(), numMethods, numFields);
 	}
 	
-	public synchronized void reset() {
+	public  void reset() {
 		clMap.clear();
 		intMap.clear();
 		packMap.clear();

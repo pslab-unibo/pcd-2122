@@ -1,7 +1,6 @@
 package pcd.ass02.ex2;
 
 import io.vertx.core.AbstractVerticle;
-import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 
 /**

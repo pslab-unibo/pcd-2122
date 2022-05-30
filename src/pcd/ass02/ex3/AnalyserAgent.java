@@ -5,13 +5,11 @@ import io.vertx.core.AbstractVerticle;
 public class AnalyserAgent extends AbstractVerticle {
 	
 	private AnalyserView view;
-	private Flag stopFlag;
 	private Statistics stats;
 	private String selectedDir;
 	
-	public AnalyserAgent(Statistics stats, String selectedDir, Flag stopFlag, AnalyserView view) {
+	public AnalyserAgent(Statistics stats, String selectedDir, AnalyserView view) {
 		this.view = view;
-		this.stopFlag = stopFlag;
 		this.stats = stats;
 		this.selectedDir = selectedDir;
 	}
@@ -22,6 +20,8 @@ public class AnalyserAgent extends AbstractVerticle {
 		var timerId = vertx.setPeriodic(50, id -> {
 			  this.view.updateStatistics(stats.getSnapshot());
 		});
+		
+		stats.reset();
 		
 		new ProjectAnalyzerLib()
 			.analyzeProject(selectedDir)
@@ -45,6 +45,7 @@ public class AnalyserAgent extends AbstractVerticle {
 				log("error  " + t);
 			},() -> {
 				log("completed.");
+				view.updateStatistics(stats.getSnapshot());
 				vertx.cancelTimer(timerId);
 			});
 	}

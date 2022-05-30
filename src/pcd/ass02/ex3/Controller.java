@@ -5,7 +5,6 @@ import io.vertx.core.Vertx;
 public class Controller {
 
 	private Flag stopFlag;
-	private AnalyserAgent agent;
 	private Statistics stats;
 	private AnalyserView view;
 	
@@ -20,7 +19,7 @@ public class Controller {
 	
 	public synchronized void notifyStarted(String selectedDir) {
 		Vertx  vertx = Vertx.vertx();
-		vertx.deployVerticle(new AnalyserAgent(stats, selectedDir, stopFlag, view));
+		vertx.deployVerticle(new AnalyserAgent(stats, selectedDir, view));
 	}
 	
 	public synchronized void notifyStopped() {

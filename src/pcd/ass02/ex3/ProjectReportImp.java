@@ -3,7 +3,6 @@ package pcd.ass02.ex3;
 import java.util.ArrayList;
 import java.util.List;
 
-import pcd.ass02.ClassReport;
 import pcd.ass02.PackageReport;
 import pcd.ass02.ProjectReport;
 
@@ -15,8 +14,7 @@ public class ProjectReportImp implements ProjectReport {
 	public ProjectReportImp(){
 		packages = new ArrayList<PackageReport>();
 	}
-	
-	
+		
 	@Override
 	public String getMainClass() {
 		return mainClass;

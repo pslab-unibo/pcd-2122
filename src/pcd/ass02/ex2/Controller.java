@@ -5,7 +5,6 @@ import io.vertx.core.Vertx;
 public class Controller {
 
 	private Flag stopFlag;
-	private AnalyserAgent agent;
 	private Statistics stats;
 	private AnalyserView view;
 	

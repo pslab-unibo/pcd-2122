@@ -72,18 +72,16 @@ public class ProjectAnalyzerLib implements ProjectAnalyzerExt {
 			var fl = new ArrayList<Future>();
 			for (var s : l) {
 				File file = new File(s);
-				if (file.isFile()) {
-					if (file.getName().endsWith(".java")) {
-						var fut = this.asyncGetReportFile(file);
-						fut.onSuccess(r -> {
-							if (r.isAClass()) {
-								rep.addClassReport(r);
-							} else {
-								rep.addInterfaceReport(r);
-							}
-						});
-						fl.add(fut);
-					}
+				if (file.isFile() && file.getName().endsWith(".java")) {
+					var fut = this.asyncGetReportFile(file);
+					fut.onSuccess(r -> {
+						if (r.isAClass()) {
+							rep.addClassReport(r);
+						} else {
+							rep.addInterfaceReport(r);
+						}
+					});
+					fl.add(fut);
 				}
 			}
 			
